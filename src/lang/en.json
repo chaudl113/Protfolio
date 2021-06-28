@@ -1,0 +1,9 @@
+{
+"nav":{
+  "home":"home",
+  "blog":"blog",
+  "projects":"projects",
+  "uses":"uses",
+  "resume":"résumé"
+}
+}
