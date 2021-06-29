@@ -176,7 +176,7 @@ export default {
   animation: blink 0.7s infinite;
   position: relative;
   top: -3px;
-  left: -12px;
+  left: -2px;
 }
 @keyframes blink {
   0% {

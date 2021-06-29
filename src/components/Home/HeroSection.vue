@@ -36,9 +36,9 @@
           your friendly neighborhood
           <div>
             <typewriter
-              :speed="100"
-              :full-erase="false"
-              :interval="200"
+              :speed="130"
+              :full-erase="true"
+              :interval="400"
               :words="toArray"
             >
             </typewriter>
@@ -142,6 +142,9 @@ export default {
     }
     .title {
       margin-top: 1.5rem;
+      .typewriter{
+         color: rgba(79, 70, 229, 1);
+      }
     }
   }
 
@@ -153,15 +156,6 @@ export default {
   }
 }
 
-.typicalWrapper::after {
-  content: "|";
-  animation: blink 1s infinite step-start;
-}
 
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
 </style>
 
