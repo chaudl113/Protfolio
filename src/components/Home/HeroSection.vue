@@ -35,23 +35,13 @@
         <h1 class="title">
           your friendly neighborhood
           <div>
-             <typical
-      :steps="['Hello', 1000, 'Hello world!', 500]"
-      :wrapper="'h2'"
-    ></typical>
-    <typical
-      class="typicalWrapper"
-      :steps="[
-        'Fucking',
-        1000,
-        'Fucking Awesome!',
-        500,
-        'Fucking Awesome! Aha :-) 👋',
-        1000,
-      ]"
-      :loop="Infinity"
-      :wrapper="'h3'"
-    ></typical>
+            <typewriter
+              :speed="100"
+              :full-erase="false"
+              :interval="200"
+              :words="toArray"
+            >
+            </typewriter>
           </div>
         </h1>
       </div>
@@ -65,16 +55,21 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
+
 import { getCurrentInstance } from "vue";
-import typical from "vue-typical";
 export default {
   name: "Hero",
- components:{typical},
+
   setup() {
     const { ctx } = getCurrentInstance();
     const config = ctx.$config;
+    const { t } = useI18n({ useScope: "global" });
+    const toArray = t("hero.words").split(" ");
+
     return {
       config,
+      toArray,
     };
   },
 };
