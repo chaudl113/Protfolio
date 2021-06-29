@@ -69,6 +69,10 @@ button,
   flex-direction: column;
 }
 
+.inline-flex {
+    display: inline-flex;
+}
+
 .container {
   width: 100%;
   max-width: 80rem;
@@ -82,6 +86,11 @@ button,
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
 }
 // Status Button Styling
 

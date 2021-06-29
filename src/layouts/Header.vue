@@ -6,61 +6,59 @@
         <ul class="flex">
           <li>
             <router-link class="nav-link text-sm" to="/">{{
-              t("nav.home")
+              $t("nav.home")
             }}</router-link>
           </li>
           <li>
             <router-link class="nav-link text-sm" to="/blog">{{
-              t("nav.blog")
+              $t("nav.blog")
             }}</router-link>
           </li>
           <li>
             <router-link class="nav-link text-sm" to="/projects">
-              {{ t("nav.projects") }}</router-link
+              {{ $t("nav.projects") }}</router-link
             >
           </li>
           <li>
             <router-link class="nav-link text-sm" to="/uses">
-              {{ t("nav.uses") }}</router-link
+              {{ $t("nav.uses") }}</router-link
             >
           </li>
           <li>
             <router-link class="nav-link text-sm" to="/résumé">{{
-              t("nav.resume")
+              $t("nav.resume")
             }}</router-link>
           </li>
         </ul>
       </div>
       <div class="right flex">
-        <div
-          class="menu"
-          :class="{ 'open-menu': menuShow }"
-          @click="onChangeMenu"
-        ></div>
+        <div class="menu" @click="onChangeMenu">
+          <div class="burger"></div>
+        </div>
         <select class="language" v-model="locale">
           <option value="en">en</option>
           <option value="vn">vn</option>
         </select>
       </div>
     </div>
-    <sidebar-mobile v-if="menuShow" />
+    <sidebar-mobile v-if="menuShow" v-on:close-menu="onChangeMenu" />
   </div>
 </template>
 
 <script>
 import { useI18n } from "vue-i18n";
 import { ref } from "vue";
-import SidebarMobile from "./SidebarMobile.vue";
+import SidebarMobile from "./components/SidebarMobile.vue";
 export default {
   components: { SidebarMobile },
   name: "Header",
   setup() {
-    const { t, locale } = useI18n({ useScope: "global" });
-    const menuShow = ref(true);
+    const { locale } = useI18n({ useScope: "global" });
+    const menuShow = ref(false);
     function onChangeMenu() {
       menuShow.value = !menuShow.value;
     }
-    return { t, locale, menuShow, onChangeMenu }; // you can return it with render context!
+    return {  locale, menuShow, onChangeMenu }; // you can return it with render context!
   },
 };
 </script>
@@ -73,12 +71,13 @@ a.router-link-active {
 }
 /* exact link will show the primary color for only the exact matching link */
 a.router-link-exact-active {
+  background-color: rgba(24, 25, 26, 1);
+
   color: rgba(255, 255, 255, 1) !important;
-  background-color: rgba(47, 49, 51, 1);
   border-radius: 0.26rem;
 }
 .container {
- position: relative;
+  position: relative;
   .header {
     justify-content: space-between;
     padding-left: 1rem;
@@ -139,44 +138,43 @@ a.router-link-exact-active {
       gap: 1rem;
       align-items: center;
       .menu {
-        height: 0.124rem;
         width: 1.5rem;
-        background-color: #e5e7eb;
+        cursor: pointer;
+        height: 20px;
+        display: flex;
         justify-content: center;
-        position: relative;
+        align-items: center;
+        cursor: pointer;
         transition: all 0.5s ease-in-out;
-        &::after {
-          position: absolute;
-          content: "";
+        .burger {
           height: 0.124rem;
           width: 1.5rem;
           background-color: #e5e7eb;
-          transform: translateY(-6px);
+          justify-content: center;
+          position: relative;
           transition: all 0.5s ease-in-out;
-        }
-        &::before {
-          position: absolute;
-          content: "";
-          height: 0.124rem;
-          width: 1.5rem;
-          background-color: #e5e7eb;
-          transform: translateY(6px);
-          transition: all 0.5s ease-in-out;
-        }
-      }
-      .open-menu {
-        transform: translateX(21px);
-        background: transparent !important;
-        &::after {
-          transform: rotate(45deg) translate(-20px, 20px) !important;
-        }
-        &::before {
-          transform: rotate(-45deg) translate(-20px, -20px) !important;
+          &::after {
+            position: absolute;
+            content: "";
+            height: 0.124rem;
+            width: 1.5rem;
+            background-color: #e5e7eb;
+            transform: translateY(-6px);
+            transition: all 0.5s ease-in-out;
+          }
+          &::before {
+            position: absolute;
+            content: "";
+            height: 0.124rem;
+            width: 1.5rem;
+            background-color: #e5e7eb;
+            transform: translateY(6px);
+            transition: all 0.5s ease-in-out;
+          }
         }
       }
 
       .language {
-        color: rgba(255, 255, 255, 1);
         padding: 0.45rem;
         border-radius: 5px;
         font-size: 0.875rem;
