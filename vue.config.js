@@ -1,10 +1,16 @@
+const path = require("path");
+const vueSrc = "./src";
 module.exports = {
-  chainWebpack: config => {
-   
-      config.module.rule('vue').uses.delete('cache-loader');
-      config.module.rule('js').uses.delete('cache-loader');
-      config.module.rule('ts').uses.delete('cache-loader');
-      config.module.rule('tsx').uses.delete('cache-loader');
-    
+  runtimeCompiler: true,
+  css: {
+    modules: true
   },
+  configureWebpack: {
+    resolve: {
+      alias: {
+        "@": path.resolve(__dirname, vueSrc)
+      },
+      extensions: ['.js', '.vue', '.json']
+    }
+  }
 };

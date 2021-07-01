@@ -169,14 +169,15 @@ export default {
 </script>
 <style>
 .typewriter-selected {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(79, 70, 229, 1);
+  color: #fff;
 }
 .typewriter-cursor {
   opacity: 1;
   animation: blink 0.7s infinite;
   position: relative;
   top: -3px;
-  left: -2px;
+  left: -10px;
 }
 @keyframes blink {
   0% {

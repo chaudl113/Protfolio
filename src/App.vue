@@ -24,7 +24,7 @@ button {
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
 }
-#app {
+html {
   background-color: #212324;
 }
 
@@ -70,7 +70,7 @@ button,
 }
 
 .inline-flex {
-    display: inline-flex;
+  display: inline-flex;
 }
 
 .container {
@@ -89,8 +89,8 @@ button,
 }
 
 .text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 // Status Button Styling
 
@@ -132,4 +132,23 @@ button,
   color: #dfe3fa;
   background-color: rgba(223, 227, 250, 0.1);
 }
+
+// mau nen boi den
+
+::selection {
+  background: #fd2d78;
+  color: #ffffff;
+}
+::-moz-selection {
+  background: #fd2d78;
+  color: #ffffff;
+}
+::-webkit-selection {
+  background: #fd2d78;
+  color: #ffffff;
+}
+
+
+
+
 </style>

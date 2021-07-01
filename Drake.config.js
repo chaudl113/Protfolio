@@ -22,7 +22,7 @@ export default {
     enabled: true,
   },
   social: {
-    github: 'karngyan',
+    github: 'chaudl113',
     linkedin: 'karngyan',
     facebook: 'karnsometimes',
     twitter: 'gyankarn',
