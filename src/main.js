@@ -29,9 +29,11 @@ const i18n = new createI18n({
 
 const app = createApp(App);
 app.config.globalProperties.$config = config;
-app.directive('scrollanimation', function(el) {
-  el.classList.add('before-enter');
-  animatedScrollObserver.observe(el);
+app.directive('scrollanimation', {
+  beforeMount(el) {
+    el.classList.add('before-enter');
+    animatedScrollObserver.observe(el);
+  },
 });
 
 app.use(i18n);
