@@ -2,7 +2,7 @@
   <div class="container">
     <div class="header flex">
       <div class="left flex">
-        <div class="logo">D</div>
+        <div class="logo">Drake</div>
         <ul class="flex">
           <li>
             <router-link class="nav-link text-sm" to="/">{{
@@ -63,7 +63,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "../abstracts/mixins.scss";
 a.router-link-active {
   color: rgba(255, 255, 255, 1);
   font-weight: bold;
@@ -93,7 +92,7 @@ a.router-link-exact-active {
     border-bottom: none;
     .left {
       .logo {
-        color: rgba(67, 56, 202, 1);
+        color: crimson;
         animation: bounce 1s infinite;
         letter-spacing: -0.05em;
         font-weight: 800;

@@ -169,7 +169,7 @@ export default {
 </script>
 <style>
 .typewriter-selected {
-  background-color: rgba(79, 70, 229, 1);
+  background-color: crimson;
   color: #fff;
 }
 .typewriter-cursor {

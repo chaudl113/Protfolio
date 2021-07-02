@@ -5,13 +5,9 @@ import store from './store';
 
 import config from '../Drake.config';
 
-import TypewriterComponent from './components/Typewriter';
-
 import { createI18n } from 'vue-i18n';
 
-import SequentialEntrance from 'vue-sequential-entrance';
-import 'vue-sequential-entrance/vue-sequential-entrance.css'
-
+import animatedScrollObserver from '@/constants/scrollanimation';
 
 function loadLocaleMessages() {
   const locales = require.context('./lang', true, /[A-Za-z0-9-_,\s]+\.json$/i);
@@ -26,17 +22,19 @@ function loadLocaleMessages() {
   return messages;
 }
 const i18n = new createI18n({
-  locale: 'en', // set locale
+  locale: 'vn', // set locale
   messages: loadLocaleMessages(),
-  fallbackLocale: 'en',
+  fallbackLocale: 'vn',
 });
 
 const app = createApp(App);
 app.config.globalProperties.$config = config;
-app.component('typewriter', TypewriterComponent);
+app.directive('scrollanimation', function(el) {
+  el.classList.add('before-enter');
+  animatedScrollObserver.observe(el);
+});
+
 app.use(i18n);
-app.component('sequential-entrance', SequentialEntrance);
 app.use(store);
 app.use(router);
-
 app.mount('#app');

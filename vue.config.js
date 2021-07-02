@@ -1,16 +1,22 @@
-const path = require("path");
-const vueSrc = "./src";
+const path = require('path');
+const vueSrc = './src';
 module.exports = {
   runtimeCompiler: true,
   css: {
-    modules: true
+    loaderOptions: {
+      sass: {
+        prependData: `
+          @import "@/abstracts/mixins.scss";
+        `,
+      },
+    },
   },
   configureWebpack: {
     resolve: {
       alias: {
-        "@": path.resolve(__dirname, vueSrc)
+        '@': path.resolve(__dirname, vueSrc),
       },
-      extensions: ['.js', '.vue', '.json']
-    }
-  }
+      extensions: ['.js', '.vue', '.json'],
+    },
+  },
 };

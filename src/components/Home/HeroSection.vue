@@ -1,84 +1,58 @@
 <template>
   <div class="hero">
-      <div class="container">
-        <div class="hero__section flex">
-          <div class="hero__section-text">
-            <a href="#" class="text-button">
-              <span class="tech">{{ $t("hero.iBlogTech") }}</span>
-              <span class="look">{{ $t("hero.haveALook") }}</span>
-              <svg
-                data-v-b904273a=""
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-                class="
-                  transition
-                  duration-500
-                  transform
-                  block
-                  group-hover:rotate-180
-                  hover-arrow
-                  ml-2
-                  w-5
-                  h-5
-                  text-gray-500
-                "
+    <div class="container">
+      <div class="hero__section flex">
+        <div class="hero__section-text">
+       
+          <h1 class="title">
+            {{ $t("hero.friendlyNeighborhood") }}
+            <div>
+              freelancer
+              <TypewriterComponent
+                :speed="130"
+                :full-erase="true"
+                :interval="400"
+                :words="toArray"
               >
-                <path
-                  data-v-b904273a=""
-                  fill-rule="evenodd"
-                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                  clip-rule="evenodd"
-                ></path>
-              </svg>
-            </a>
-            <h1 class="title">
-              {{ $t("hero.friendlyNeighborhood") }}
-              <div>
-                freelancer
-                <typewriter
-                  :speed="130"
-                  :full-erase="true"
-                  :interval="400"
-                  :words="toArray"
-                >
-                </typewriter>
-              </div>
-            </h1>
-            <p class="text">
-              {{ $t("hero.description") }}
-            </p>
-            <p class="worked__at-title">worked at</p>
-            <div class="flex worked__at">
-              <div
-                class="worked__at-photo"
-                v-for="(item, index) in config.workedAt.meta"
-                :key="index"
-              >
-                <a :href="item.url"
-                  ><img :src="require(`@/assets${item.src}`)" alt=""
-                /></a>
-              </div>
+              </TypewriterComponent>
             </div>
-          </div>
-          <div class="hero__section-img flex">
-            <div class="photo">
-              <img :src="require(`@/assets/${config.image}`)" alt="" />
+          </h1>
+          <p class="text">
+            {{ $t("hero.description") }}
+          </p>
+          <p class="worked__at-title">worked at</p>
+          <div class="flex worked__at">
+            <div
+              class="worked__at-photo"
+              v-for="(item, index) in config.workedAt.meta"
+              :key="index"
+            >
+              <a :href="item.url"
+                ><img :src="require(`@/assets${item.src}`)" alt=""
+              /></a>
             </div>
           </div>
         </div>
+        <div class="hero__section-img flex">
+          <div class="photo">
+            <img :src="require(`@/assets/${config.image}`)" alt="" />
+          </div>
+        </div>
       </div>
+    </div>
   </div>
 </template>
 
 <script>
 import { useI18n } from "vue-i18n";
 import { getCurrentInstance } from "vue";
+import TypewriterComponent from "./components/Typewriter";
 
 export default {
   name: "Hero",
-
+  components: {
+    TypewriterComponent,
+  },
   setup() {
     const { ctx } = getCurrentInstance();
     const config = ctx.$config;
@@ -125,6 +99,10 @@ export default {
       border-color: rgba(47, 49, 51, 1);
       border-right-width: 1px;
       border-left-width: 1px;
+      @include mobile {
+        flex-direction: column;
+        gap: 1rem;
+      }
 
       &-text,
       &-img {
@@ -161,7 +139,7 @@ export default {
             padding-top: 0.125rem;
             padding-bottom: 0.125rem;
             line-height: 1.25rem;
-            background-color: rgba(79, 70, 229, 1);
+            background-color: crimson;
             border-radius: 9999px;
             padding-left: 0.75rem;
             padding-right: 0.75rem;
@@ -196,7 +174,7 @@ export default {
           line-height: 2.25rem;
           font-weight: 800;
           .typewriter {
-            color: rgba(79, 70, 229, 1);
+            color: crimson;
           }
         }
         .text {
@@ -223,6 +201,9 @@ export default {
               margin: auto;
               width: auto;
               height: 2.25rem;
+              @include mobile {
+                height: 2rem;
+              }
             }
           }
         }

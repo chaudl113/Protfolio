@@ -8,6 +8,7 @@ export default {};
 
 
 <style lang="scss">
+@import "./abstracts/mixins.scss";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 button {
   padding: 15px;
@@ -148,7 +149,8 @@ button,
   color: #ffffff;
 }
 
-
-
-
+img {
+  width: 100%;
+  height: 100%;
+}
 </style>
