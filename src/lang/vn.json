@@ -3,7 +3,7 @@
     "home":"Trang chủ",
     "blog":"Blog",
     "projects":"dự án",
-    "uses":"thiết bị",
+    "uses":"sử dụng",
     "resume":"sơ yếu lý lịch"
   },
   
@@ -17,5 +17,9 @@
 "githubCalendar": {
   "header": "đóng góp",
   "subtext": "biểu đồ github"
+},
+"uses":{
+  "header": "sử dụng",
+  "subtext": "tóm tắt nhanh về những gì tôi sử dụng hàng ngày"
 }
   }

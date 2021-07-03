@@ -25,7 +25,7 @@
           >
         </li>
         <li class="text-base">
-          <router-link class="nav-link" to="/résumé">{{
+          <router-link class="nav-link" to="/resume">{{
             t("nav.resume")
           }}</router-link>
         </li>
@@ -73,6 +73,7 @@ export default {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 999;
 
   .mobi-bg {
     width: 100%;
@@ -98,9 +99,9 @@ export default {
 
       .close {
         cursor: pointer;
-        width: 1.5rem;
-        cursor: pointer;
-        height: 20px;
+        height: 30px;
+        width: 30px;
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -124,6 +125,10 @@ export default {
           background-color: rgba(121, 123, 124, 1);
           transform: rotate(45deg) !important;
           transition: all 0.5s ease-in-out;
+        }
+        &:hover {
+          background-color: #fff;
+          border-radius: 0.15rem;
         }
       }
 

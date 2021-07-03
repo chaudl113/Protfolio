@@ -16,5 +16,9 @@
 "githubCalendar": {
   "header": "contributions",
   "subtext": "github calendar heatmap"
+},
+"uses":{
+  "header": "uses",
+  "subtext": "a quick summary of what I use on a daily basis to code "
 }
 }

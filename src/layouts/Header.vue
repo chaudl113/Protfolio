@@ -25,7 +25,7 @@
             >
           </li>
           <li>
-            <router-link class="nav-link text-sm" to="/résumé">{{
+            <router-link class="nav-link text-sm" to="/resume">{{
               $t("nav.resume")
             }}</router-link>
           </li>
@@ -58,7 +58,7 @@ export default {
     function onChangeMenu() {
       menuShow.value = !menuShow.value;
     }
-    return {  locale, menuShow, onChangeMenu }; // you can return it with render context!
+    return { locale, menuShow, onChangeMenu }; // you can return it with render context!
   },
 };
 </script>
@@ -137,14 +137,18 @@ a.router-link-exact-active {
       gap: 1rem;
       align-items: center;
       .menu {
+        display: none;
         width: 1.5rem;
         cursor: pointer;
         height: 20px;
-        display: flex;
+
         justify-content: center;
         align-items: center;
         cursor: pointer;
         transition: all 0.5s ease-in-out;
+        @include mobile {
+          display: flex;
+        }
         .burger {
           height: 0.124rem;
           width: 1.5rem;
@@ -174,6 +178,9 @@ a.router-link-exact-active {
       }
 
       .language {
+        @include mobile {
+          display: none;
+        }
         padding: 0.45rem;
         border-radius: 5px;
         font-size: 0.875rem;

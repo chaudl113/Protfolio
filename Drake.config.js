@@ -27,7 +27,7 @@ export default {
     facebook: 'karnsometimes',
     twitter: 'gyankarn',
     instagram: 'karngyan.dev',
-    codestats: 'karngyan', // https://codestats.net make a profile if you dont already have one.
+    codestats: 'tnlong1214', // https://codestats.net make a profile if you dont already have one.
   },
   buyMeACoffee: {
     enabled: true,
@@ -46,15 +46,15 @@ export default {
   uses: {
     enabled: true,
     meta: [
-      { title: 'OS', value: 'macOS Catalina' },
-      { title: 'Memory', value: '16 GB 2667 MHz DDR4' },
-      { title: 'Keyboard', value: 'Keychron K2 - Gateron Brown Keys' },
+      { title: 'OS', value: 'Windows 10 Pro' },
+      { title: 'Memory', value: '8GB 2667 MHz DDR4' },
+      { title: 'Keyboard', value: 'KANANIC TK1 - White Brown Switch' },
       { title: 'Mouse', value: 'Logitech Silent Pebble' },
       { title: 'Monitor', value: 'LG QHD (2560 x 1440) 27 Inch IPS Display' },
       {
         title: 'Laptop • Processor • Graphics',
         value:
-          'MacBook Pro (16-inch, 2019) • 2.6 GHz 6-Core Intel Core i7 • AMD Radeon Pro 5300M 4 GB + Intel UHD Graphics 630 1536 MB',
+          'Laptop Dell Inspiron 5559 i5 6200U • AMD Radeon R5 M335 + Intel HD Graphics 520',
       },
     ],
   },
