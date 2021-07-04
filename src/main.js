@@ -8,7 +8,7 @@ import config from '../Drake.config';
 import { createI18n } from 'vue-i18n';
 
 import animatedScrollObserver from '@/constants/scrollanimation';
-
+import 'pdfjs-dist/web/pdf_viewer.css';
 function loadLocaleMessages() {
   const locales = require.context('./lang', true, /[A-Za-z0-9-_,\s]+\.json$/i);
   const messages = {};

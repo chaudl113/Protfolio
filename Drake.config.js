@@ -41,7 +41,7 @@ export default {
   },
   resume: {
     enabled: true,
-    pdfUrl: '/RESUME_GYAN_KARN_DARK.pdf', // add files in static folder
+    pdfUrl: 'http://localhost:8080/Drake.pdf', // add files in static folder
   },
   uses: {
     enabled: true,
