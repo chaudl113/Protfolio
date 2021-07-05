@@ -3,7 +3,6 @@
     <div class="container">
       <div class="hero__section flex">
         <div class="hero__section-text">
-       
           <h1 class="title">
             {{ $t("hero.friendlyNeighborhood") }}
             <div>
@@ -24,7 +23,7 @@
           <div class="flex worked__at">
             <div
               class="worked__at-photo"
-              v-for="(item, index) in config.workedAt.meta"
+              v-for="(item, index) in $config.workedAt.meta"
               :key="index"
             >
               <a :href="item.url"
@@ -35,7 +34,7 @@
         </div>
         <div class="hero__section-img flex">
           <div class="photo">
-            <img :src="require(`@/assets/${config.image}`)" alt="" />
+            <img :src="require(`@/assets/${$config.image}`)" alt="" />
           </div>
         </div>
       </div>
