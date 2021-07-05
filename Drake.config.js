@@ -21,6 +21,13 @@ export default {
   firebase: {
     enabled: true,
   },
+  lang: {
+    enabled: true,
+    meta: [
+      { lang: 'vn', icon: '/vn.svg' },
+      { lang: 'en', icon: '/en.svg' },
+    ],
+  },
   social: {
     github: 'chaudl113',
     linkedin: 'karngyan',
